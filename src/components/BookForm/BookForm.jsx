@@ -2,8 +2,8 @@ import React from 'react';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { addContact } from 'redux/operations';
-import { useContacts } from 'hooks/useContacts';
+import { addContact } from 'redux/contacts/operations';
+import { useContacts } from 'hooks';
 import {
   Field,
   Form,

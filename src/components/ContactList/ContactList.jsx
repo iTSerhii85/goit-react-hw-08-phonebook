@@ -2,8 +2,8 @@ import { BsFillPersonFill } from 'react-icons/bs';
 import { Item, List, DeleteButton } from './ContactList.style';
 
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/operations';
-import { useContacts } from 'hooks/useContacts';
+import { deleteContact } from 'redux/contacts/operations';
+import { useContacts } from 'hooks';
 
 export const ContactList = () => {
   const dispatch = useDispatch();

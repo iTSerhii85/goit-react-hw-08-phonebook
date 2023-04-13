@@ -1,37 +1,16 @@
-import styled from 'styled-components';
+import { Suspense } from 'react';
+import { Toaster } from 'react-hot-toast';
+import { Outlet } from 'react-router-dom';
+import { AppBar } from './AppBar/AppBar';
 
-export const Layout = styled.div`
-  padding: 20px 100px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 98vh;
-  margin-top: 10px;
-
-  box-shadow: 6px 7px 43px 4px rgba(0, 0, 0, 1);
-
-  background: rgb(0, 0, 0);
-  background: -moz-linear-gradient(
-    320deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 18, 246, 1) 100%
+export const Layout = () => {
+  return (
+    <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
+      <AppBar />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
+      <Toaster position="top-right" reverseOrder={false} />
+    </div>
   );
-  background: -webkit-linear-gradient(
-    320deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 18, 246, 1) 100%
-  );
-  background: linear-gradient(
-    320deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 18, 246, 1) 100%
-  );
-
-  & h1 {
-    margin-bottom: 20px;
-  }
-`;
+};

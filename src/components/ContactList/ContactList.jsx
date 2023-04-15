@@ -4,6 +4,7 @@ import { Item, List, DeleteButton } from './ContactList.style';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 import { useContacts } from 'hooks';
+import { NavLink } from 'react-router-dom';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -14,11 +15,11 @@ export const ContactList = () => {
       {contacts.map(contact => {
         return (
           <Item key={contact.id}>
-            <div>
+            <NavLink to={`${contact.id}`} >
               <BsFillPersonFill />
               <span>{contact.name}:</span>
               <span>{contact.number}</span>
-            </div>
+            </NavLink>
             <DeleteButton
               type="button"
               onClick={() => dispatch(deleteContact(contact.id))}

@@ -1,12 +1,7 @@
-import * as Yup from 'yup';
+import { LogInSchema } from 'components/Utils/ValidateForm';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { logIn } from 'redux/auth/operations';
-
-const RegisterSchema = Yup.object().shape({
-  email: Yup.string().required('Required'),
-  password: Yup.string().required('Required'),
-});
+import { logIn } from 'redux/auth/authOperations';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -17,7 +12,7 @@ export const LoginForm = () => {
         email: '',
         password: '',
       }}
-      validationSchema={RegisterSchema}
+      validationSchema={LogInSchema}
       onSubmit={(values, actions) => {
         dispatch(logIn(values));
         actions.resetForm();
@@ -26,12 +21,12 @@ export const LoginForm = () => {
       <Form>
         <label>
           Email
-          <Field name="email" placeholder="Email" type="tel" />
+          <Field name="email" placeholder="Email" type="email" />
           <ErrorMessage name="email" component="div" />
         </label>
         <label>
           Password
-          <Field name="password" placeholder="Password" type="tel" />
+          <Field name="password" placeholder="Password" type="password" />
           <ErrorMessage name="password" component="div" />
         </label>
         <button type="submit">Log In</button>

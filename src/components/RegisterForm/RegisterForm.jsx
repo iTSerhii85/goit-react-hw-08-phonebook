@@ -1,16 +1,7 @@
-import * as Yup from 'yup';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { RegisterSchema } from 'components/Utils/ValidateForm';
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/operations';
-
-const RegisterSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(2, 'Too Short!')
-    .max(20, 'Too Long!')
-    .required('Required'),
-  email: Yup.string().required('Required'),
-  password: Yup.string().required('Required'),
-});
+import { register } from 'redux/auth/authOperations';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -31,17 +22,17 @@ export const RegisterForm = () => {
       <Form>
         <label>
           Username
-          <Field name="name" placeholder="Username" />
+          <Field name="name" type="text" placeholder="Username" />
           <ErrorMessage name="Username" component="div" />
         </label>
         <label>
           Email
-          <Field name="email" placeholder="Email" type="tel" />
+          <Field name="email" placeholder="Email" type="email" />
           <ErrorMessage name="email" component="div" />
         </label>
         <label>
           Password
-          <Field name="password" placeholder="Password" type="tel" />
+          <Field name="password" placeholder="Password" type="password" />
           <ErrorMessage name="password" component="div" />
         </label>
         <button type="submit">Register</button>

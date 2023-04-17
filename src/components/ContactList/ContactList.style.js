@@ -40,7 +40,6 @@ export const Item = styled.li`
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.3px);
   -webkit-backdrop-filter: blur(6.3px);
-  /* cursor: pointer; */
 
   &:hover {
     transform: scale(1.1);
@@ -59,7 +58,6 @@ export const ContactWrapper = styled.div`
   height: 100%;
   display: flex;
   gap: 15px;
-  /* justify-content: center; */
   align-items: center;
   font-size: 23px;
   font-weight: 500;

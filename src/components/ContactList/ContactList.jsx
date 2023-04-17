@@ -1,5 +1,9 @@
 import { BsFillPersonFill } from 'react-icons/bs';
 import { IconContext } from 'react-icons';
+import { useDispatch } from 'react-redux';
+import { deleteContact } from 'redux/contacts/operations';
+import { useContacts } from 'hooks';
+import { Link } from 'react-router-dom';
 import {
   Item,
   List,
@@ -7,12 +11,6 @@ import {
   ContactWrapper,
   StyledLink,
 } from './ContactList.style';
-
-import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/contacts/operations';
-import { useContacts } from 'hooks';
-import { Link } from 'react-router-dom';
-// import { NavLink } from 'react-router-dom';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -29,7 +27,6 @@ export const ContactList = () => {
                   <BsFillPersonFill />
                 </IconContext.Provider>
                 <span>{contact.name}</span>
-                {/* <span>{contact.number}</span> */}
               </ContactWrapper>
               <Link to={'/contacts'}>
                 <DeleteButton

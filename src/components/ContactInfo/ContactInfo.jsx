@@ -1,6 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { selectContacts } from 'redux/contacts/selectors';
+import { FcBusinessContact } from 'react-icons/fc';
+import { BsFillPersonFill, BsFillTelephoneFill } from 'react-icons/bs';
+import { IconContext } from 'react-icons';
+import { useState } from 'react';
+import { UpdateForm } from 'components';
+import { deleteContact } from 'redux/contacts/operations';
 import {
   ButtonWrapper,
   ContactWrapper,
@@ -8,13 +14,6 @@ import {
   InfoWrapper,
   UpdateButton,
 } from './ContactInfo.style';
-import { FcBusinessContact } from 'react-icons/fc';
-import { BsFillPersonFill, BsFillTelephoneFill } from 'react-icons/bs';
-
-import { IconContext } from 'react-icons';
-import { useState } from 'react';
-import { UpdateForm } from 'components';
-import { deleteContact } from 'redux/contacts/operations';
 
 export const ContactInfo = () => {
   const { id } = useParams();

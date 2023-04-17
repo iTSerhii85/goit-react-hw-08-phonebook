@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const NewContButton = styled.button`
   display: block;
-  width: 100%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;

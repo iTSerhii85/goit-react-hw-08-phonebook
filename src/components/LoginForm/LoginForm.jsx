@@ -1,7 +1,12 @@
-import { LogInSchema } from 'components/Utils/ValidateForm';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { LogInSchema } from 'Utils/ValidateForm';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/authOperations';
+
+import { Formik } from 'formik';
+import { BottomText, ErrorMessage, Field, Form, FormField, StyledLink, SubmitButton } from './LoginForm.style';
+
+import { IconContext } from "react-icons";
+import { FcAddressBook } from "react-icons/fc";
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -19,17 +24,24 @@ export const LoginForm = () => {
       }}
     >
       <Form>
-        <label>
+      <IconContext.Provider value={{ size: "150px", style: { marginTop: '-80px', marginRight: "auto", marginLeft: "auto" } }}>
+        <FcAddressBook/>
+      </IconContext.Provider>
+        <FormField>
           Email
           <Field name="email" placeholder="Email" type="email" />
           <ErrorMessage name="email" component="div" />
-        </label>
-        <label>
+        </FormField>
+        <FormField>
           Password
           <Field name="password" placeholder="Password" type="password" />
           <ErrorMessage name="password" component="div" />
-        </label>
-        <button type="submit">Log In</button>
+        </FormField>
+        <SubmitButton type="submit">Log In</SubmitButton>
+        <BottomText>
+            Don’t have an account yet?{' '}
+            <StyledLink to="/register">Sign up</StyledLink>
+        </BottomText>
       </Form>
     </Formik>
   );

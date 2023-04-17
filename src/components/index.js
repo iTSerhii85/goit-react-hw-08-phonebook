@@ -13,3 +13,5 @@ export { Layout } from './Layout/Layout';
 export { PrivateRoute } from './Routs/PrivateRoute';
 export { RestrictedRoute } from './Routs/RestrictedRoute';
 export { App } from './App/App';
+export { Developer } from './DewCont/DewCont';
+export { UpdateForm } from './UpdateForm/UpdateForm';

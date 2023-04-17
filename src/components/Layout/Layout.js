@@ -5,12 +5,14 @@ import { AppBar } from 'components';
 
 export const Layout = () => {
   return (
-    <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
+    <>
       <AppBar />
-      <Suspense fallback={null}>
-        <Outlet />
-      </Suspense>
-      <Toaster position="top-right" reverseOrder={false} />
-    </div>
+      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 16px' }}>
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>
+        <Toaster position="top-right" reverseOrder={false} />
+      </div>
+    </>
   );
 };

@@ -1,10 +1,11 @@
 import { BsFillPersonFill } from 'react-icons/bs';
-import { Item, List, DeleteButton } from './ContactList.style';
+import { IconContext } from "react-icons";
+import { Item, List, DeleteButton, ContactWrapper, StyledLink } from './ContactList.style';
 
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 import { useContacts } from 'hooks';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -15,11 +16,15 @@ export const ContactList = () => {
       {contacts.map(contact => {
         return (
           <Item key={contact.id}>
-            <NavLink to={`${contact.id}`} >
+            <StyledLink to={`${contact.id}`} >
+            <ContactWrapper>
+              <IconContext.Provider value={{ size: "30px"}}>
               <BsFillPersonFill />
-              <span>{contact.name}:</span>
-              <span>{contact.number}</span>
-            </NavLink>
+              </IconContext.Provider>
+                <span>{contact.name}</span>
+                {/* <span>{contact.number}</span> */}
+            </ContactWrapper>
+            </StyledLink>
             <DeleteButton
               type="button"
               onClick={() => dispatch(deleteContact(contact.id))}

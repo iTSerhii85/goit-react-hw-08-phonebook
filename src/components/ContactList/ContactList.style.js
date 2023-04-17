@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const List = styled.ul`
   list-style: none;
@@ -35,12 +36,11 @@ export const Item = styled.li`
   align-items: center;
   padding: 10px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.29);
+  background: rgba(8, 8, 8, 0.46);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  cursor: pointer;
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
+  /* cursor: pointer; */
 
   &:hover {
     transform: scale(1.1);
@@ -53,6 +53,18 @@ export const Item = styled.li`
     align-items: center;
   }
 `;
+
+export const ContactWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  font-weight: 500;
+  padding: 10px;
+`
 
 export const DeleteButton = styled.button`
   display: block;
@@ -83,4 +95,9 @@ export const DeleteButton = styled.button`
     box-shadow: inset 0px 0.1em 0.6em #3c4fe0;
     transform: translateY(0em);
   }
+`;
+
+export const StyledLink = styled(NavLink)`
+text-decoration: none;
+color: black;
 `;

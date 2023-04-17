@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import 'modern-normalize';
+import 'modern-normalize'
+import img from '../img/book.jpg';
 
 export const GlobalStyle = createGlobalStyle`
 body {
@@ -10,6 +11,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: darkgray;
+    background-image: url(${img});
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   code {

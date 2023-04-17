@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik } from 'formik';
 import { BookSchema } from 'Utils/ValidateForm';
 import { useDispatch } from 'react-redux';
-import { addContact } from 'redux/contacts/operations';
+import { updateContact } from 'redux/contacts/operations';
 import { useContacts } from 'hooks';
 import {
   Field,
@@ -10,17 +10,18 @@ import {
   FormField,
   SubmitButton,
   ErrorMessage,
-} from './BookForm.style';
+} from './UpdateForm.stile';
 
-export const BookForm = ({ closeModal }) => {
+export const UpdateForm = ({ user, updateUser }) => {
   const dispatch = useDispatch();
   const contacts = useContacts();
 
   return (
     <Formik
       initialValues={{
-        name: '',
-        number: '',
+        id: user.id,
+        name: user.name,
+        number: user.number,
       }}
       validationSchema={BookSchema}
       onSubmit={(values, actions) => {
@@ -30,11 +31,11 @@ export const BookForm = ({ closeModal }) => {
           )
         ) {
           window.alert(`${values.name} is already in contacts!`);
-          closeModal();
+          updateUser();
         } else {
-          dispatch(addContact(values));
+          dispatch(updateContact(values));
           actions.resetForm();
-          closeModal();
+          updateUser();
         }
       }}
     >
@@ -49,7 +50,7 @@ export const BookForm = ({ closeModal }) => {
           <Field name="number" type="tel" placeholder="+3 80XX XX XX XXX" />
           <ErrorMessage name="number" component="div" />
         </FormField>
-        <SubmitButton type="submit">Add contact</SubmitButton>
+        <SubmitButton type="submit">OK</SubmitButton>
       </Form>
     </Formik>
   );

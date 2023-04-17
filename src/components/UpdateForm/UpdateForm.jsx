@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik } from 'formik';
 import { BookSchema } from 'Utils/ValidateForm';
 import { useDispatch } from 'react-redux';
-import { updateContact } from 'redux/contacts/operations';
+import { fetchContacts, updateContact } from 'redux/contacts/operations';
 import { useContacts } from 'hooks';
 import {
   Field,
@@ -35,6 +35,7 @@ export const UpdateForm = ({ user, updateUser }) => {
         } else {
           dispatch(updateContact(values));
           actions.resetForm();
+          dispatch(fetchContacts());
           updateUser();
         }
       }}

@@ -1,18 +1,26 @@
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
 import { selectContacts } from 'redux/contacts/selectors';
-import { ContactWrapper, Info, InfoWrapper } from './ContactInfo.style';
+import {
+  ButtonWrapper,
+  ContactWrapper,
+  Info,
+  InfoWrapper,
+  UpdateButton,
+} from './ContactInfo.style';
 import { FcBusinessContact } from 'react-icons/fc';
 import { BsFillPersonFill, BsFillTelephoneFill } from 'react-icons/bs';
 
 import { IconContext } from 'react-icons';
 import { useState } from 'react';
 import { UpdateForm } from 'components';
+import { deleteContact } from 'redux/contacts/operations';
 
 export const ContactInfo = () => {
   const { id } = useParams();
   const contacts = useSelector(selectContacts);
   const [updateUser, setUpdateUser] = useState(false);
+  const dispatch = useDispatch();
 
   const contact = contacts.find(contact => contact.id === id);
 
@@ -37,9 +45,19 @@ export const ContactInfo = () => {
             </IconContext.Provider>{' '}
             {contact.number}
           </Info>
-          <button type="button" onClick={() => setUpdateUser(true)}>
-            Update
-          </button>
+          <ButtonWrapper>
+            <UpdateButton type="button" onClick={() => setUpdateUser(true)}>
+              Update
+            </UpdateButton>
+            <Link to={'/contacts'}>
+              <UpdateButton
+                type="button"
+                onClick={() => dispatch(deleteContact(contact.id))}
+              >
+                Delete
+              </UpdateButton>
+            </Link>
+          </ButtonWrapper>
         </InfoWrapper>
       ) : (
         <UpdateForm user={contact} updateUser={setUpdateUser} />

@@ -59,12 +59,12 @@ export const ContactWrapper = styled.div`
   height: 100%;
   display: flex;
   gap: 15px;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   font-size: 23px;
   font-weight: 500;
   padding: 10px;
-`
+`;
 
 export const DeleteButton = styled.button`
   display: block;
@@ -98,6 +98,6 @@ export const DeleteButton = styled.button`
 `;
 
 export const StyledLink = styled(NavLink)`
-text-decoration: none;
-color: black;
+  text-decoration: none;
+  color: black;
 `;

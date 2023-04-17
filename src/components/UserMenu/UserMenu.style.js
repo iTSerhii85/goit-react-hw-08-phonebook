@@ -1,8 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 50px;
+  color: #ffffff;
 
   p {
     margin: 0;
@@ -16,6 +17,9 @@ export const Wrapper = styled.div`
     cursor: pointer;
     text-align: center;
     display: flex;
-    /* padding: 10px; */
+
+    p {
+      color: #ffffff;
+    }
   }
 `;

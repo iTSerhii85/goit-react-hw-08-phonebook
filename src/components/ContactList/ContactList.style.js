@@ -34,7 +34,7 @@ export const Item = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 0 10px;
   border-radius: 8px;
   background: rgba(8, 8, 8, 0.46);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -46,22 +46,22 @@ export const Item = styled.li`
     box-shadow: 10px 10px 17px 1px rgba(0, 0, 0, 0.81);
   }
 
-  & div {
+  /* & div {
     display: flex;
     gap: 10px;
     align-items: center;
-  }
+  } */
 `;
 
 export const ContactWrapper = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 320px;
+  height: 60px;
   display: flex;
   gap: 15px;
   align-items: center;
   font-size: 23px;
   font-weight: 500;
-  padding: 10px;
+  /* padding: 10px; */
 `;
 
 export const DeleteButton = styled.button`

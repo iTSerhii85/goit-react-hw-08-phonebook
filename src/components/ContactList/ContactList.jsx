@@ -20,24 +20,24 @@ export const ContactList = () => {
     <List>
       {contacts.map(contact => {
         return (
-          <StyledLink to={`${contact.id}`}>
-            <Item key={contact.id}>
+          <Item key={contact.id}>
+            <StyledLink to={`${contact.id}`}>
               <ContactWrapper>
                 <IconContext.Provider value={{ size: '30px' }}>
                   <BsFillPersonFill />
                 </IconContext.Provider>
                 <span>{contact.name}</span>
               </ContactWrapper>
-              <Link to={'/contacts'}>
-                <DeleteButton
-                  type="button"
-                  onClick={() => dispatch(deleteContact(contact.id))}
-                >
-                  Delete
-                </DeleteButton>
-              </Link>
-            </Item>
-          </StyledLink>
+            </StyledLink>
+            <Link to={'/contacts'}>
+              <DeleteButton
+                type="button"
+                onClick={() => dispatch(deleteContact(contact.id))}
+              >
+                Delete
+              </DeleteButton>
+            </Link>
+          </Item>
         );
       })}
     </List>

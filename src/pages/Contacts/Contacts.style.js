@@ -11,16 +11,13 @@ export const ContactWrapper = styled.div`
   align-items: center;
   height: 76vh;
   margin-top: -35px;
-
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  /* border: 1px solid rgba(255, 255, 255, 1); */
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 
   h2 {
     font-size: 30px;
@@ -41,5 +38,3 @@ export const Header = styled.h1`
   margin-bottom: 55px;
   margin-top: 75px;
 `;
-
-

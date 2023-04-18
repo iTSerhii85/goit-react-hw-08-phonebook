@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const DewCont = styled.div`
   writing-mode: vertical-rl;
-  /* text-orientation: upright; */
   height: 100vh;
   width: 50px;
   background: rgba(8, 8, 8, 0.46);

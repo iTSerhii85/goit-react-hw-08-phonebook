@@ -1,12 +1,18 @@
 import { LogInSchema } from 'Utils/ValidateForm';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/authOperations';
-
+import { IconContext } from 'react-icons';
+import { FcAddressBook } from 'react-icons/fc';
 import { Formik } from 'formik';
-import { BottomText, ErrorMessage, Field, Form, FormField, StyledLink, SubmitButton } from './LoginForm.style';
-
-import { IconContext } from "react-icons";
-import { FcAddressBook } from "react-icons/fc";
+import {
+  BottomText,
+  ErrorMessage,
+  Field,
+  Form,
+  FormField,
+  StyledLink,
+  SubmitButton,
+} from './LoginForm.style';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -24,9 +30,18 @@ export const LoginForm = () => {
       }}
     >
       <Form>
-      <IconContext.Provider value={{ size: "150px", style: { marginTop: '-80px', marginRight: "auto", marginLeft: "auto" } }}>
-        <FcAddressBook/>
-      </IconContext.Provider>
+        <IconContext.Provider
+          value={{
+            size: '150px',
+            style: {
+              marginTop: '-80px',
+              marginRight: 'auto',
+              marginLeft: 'auto',
+            },
+          }}
+        >
+          <FcAddressBook />
+        </IconContext.Provider>
         <FormField>
           Email
           <Field name="email" placeholder="Email" type="email" />
@@ -39,8 +54,8 @@ export const LoginForm = () => {
         </FormField>
         <SubmitButton type="submit">Log In</SubmitButton>
         <BottomText>
-            Don’t have an account yet?{' '}
-            <StyledLink to="/register">Sign up</StyledLink>
+          Don’t have an account yet?{' '}
+          <StyledLink to="/register">Sign up</StyledLink>
         </BottomText>
       </Form>
     </Formik>

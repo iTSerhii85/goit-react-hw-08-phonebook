@@ -1,6 +1,6 @@
+import Modal from 'components/Modal/Modal';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Modal from 'components/Modal/Modal';
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectError, selectIsLoading } from 'redux/contacts/selectors';
 import { ContactWrapper, Header, Wrapper } from './Contacts.style';

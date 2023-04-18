@@ -15,3 +15,4 @@ export { RestrictedRoute } from './Routs/RestrictedRoute';
 export { App } from './App/App';
 export { Developer } from './DewCont/DewCont';
 export { UpdateForm } from './UpdateForm/UpdateForm';
+export { ContactInfo } from './ContactInfo/ContactInfo';
